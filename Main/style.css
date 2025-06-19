@@ -1,0 +1,33 @@
+body {
+    margin: 0;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Press Start 2P', cursive; /* Make sure this font is available or imported */
+    color: #0ff; /* Cyan text color */
+    overflow: hidden; /* Hide scrollbars if canvas is too big for some reason */
+}
+
+#gameCanvas {
+    border: 3px solid #f0f; /* Magenta border */
+    box-shadow: 0 0 10px #f0f, 0 0 20px #f0f; /* Magenta glow */
+    background-color: #111; /* Darker background for the game area itself if needed */
+}
+
+/* General heading style, if we add one later on the game page */
+h1 {
+    color: #0ff;
+    text-shadow: 0 0 5px #0ff, 0 0 10px #0ff;
+    text-align: center;
+}
+
+/* It's good practice to ensure the font is loaded.
+   If 'Press Start 2P' is a Google Font, it should be imported in the HTML or CSS.
+   For this exercise, we assume it's either available or handled by the main page's setup.
+   If not, an @import rule would be needed here or a <link> in the HTML.
+   Example for Google Fonts:
+   @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+   Then update font-family: 'Press Start 2P', cursive;
+*/
