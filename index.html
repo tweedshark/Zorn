@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zorn's Game Factory</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts for a retro feel (Inter for readability, but a display font for the title) -->
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Custom CSS to apply the 'Press Start 2P' font to the title and make it glow */
+        .title-font {
+            font-family: 'Press Start 2P', cursive;
+            text-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 15px #0ff, 0 0 20px #f0f, 0 0 30px #f0f, 0 0 40px #f0f;
+            animation: flicker 1.5s infinite alternate; /* Neon flicker effect */
+        }
+
+        /* Keyframes for the flicker animation */
+        @keyframes flicker {
+            0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+                text-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 15px #0ff, 0 0 20px #f0f, 0 0 30px #f0f, 0 0 40px #f0f;
+                opacity: 1;
+            }
+            20%, 24%, 55% {
+                text-shadow: none;
+                opacity: 0.7;
+            }
+        }
+
+        /* Neon glow for buttons and cards */
+        .neon-glow {
+            box-shadow: 0 0 8px #0ff, 0 0 15px #0ff, 0 0 25px #0ff, 0 0 40px #f0f;
+        }
+
+        .neon-border {
+            border: 2px solid;
+            border-image: linear-gradient(45deg, #0ff, #f0f, #ff0) 1;
+            box-shadow: 0 0 5px #0ff, 0 0 10px #f0f;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif; /* Default body font */
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-gray-900 via-black to-gray-900 text-gray-200 min-h-screen flex flex-col items-center py-8 px-4">
+
+    <!-- Header Section -->
+    <header class="w-full max-w-5xl mb-12 text-center">
+        <h1 class="title-font text-5xl md:text-7xl lg:text-8xl text-purple-400 mb-4 rounded-lg p-4 leading-tight">
+            Zorn's Game Factory
+        </h1>
+        <p class="text-xl md:text-2xl text-green-400 neon-glow p-2 rounded-md inline-block">
+            Step into the future of retro gaming!
+        </p>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="w-full max-w-6xl space-y-12">
+
+        <!-- Upcoming Games Section -->
+        <section class="bg-gray-800 bg-opacity-70 p-6 md:p-8 rounded-xl shadow-lg neon-border">
+            <h2 class="text-3xl md:text-4xl font-bold text-yellow-300 mb-6 title-font text-center">
+                Upcoming Titles
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Game Card 1 -->
+                <div class="bg-gray-900 bg-opacity-80 p-6 rounded-lg neon-glow transition-transform transform hover:scale-105 duration-300">
+                    <img src="https://placehold.co/400x250/3333FF/FFFFFF?text=CYBER+RACER" alt="Cyber Racer Placeholder" class="w-full h-40 object-cover mb-4 rounded-md border-2 border-blue-500">
+                    <h3 class="text-2xl font-bold text-blue-400 mb-2">Cyber Racer 2088</h3>
+                    <p class="text-gray-300 text-sm mb-4">Blaze through neon-lit streets in this high-octane futuristic racer!</p>
+                    <button class="w-full py-3 px-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-lg shadow-md hover:from-blue-700 hover:to-purple-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-75 transform hover:-translate-y-1 transition-all duration-200">
+                        Learn More
+                    </button>
+                </div>
+                <!-- Game Card 2 -->
+                <div class="bg-gray-900 bg-opacity-80 p-6 rounded-lg neon-glow transition-transform transform hover:scale-105 duration-300">
+                    <img src="https://placehold.co/400x250/FF33CC/FFFFFF?text=ASTRO+BLASTER" alt="Astro Blaster Placeholder" class="w-full h-40 object-cover mb-4 rounded-md border-2 border-pink-500">
+                    <h3 class="text-2xl font-bold text-pink-400 mb-2">Astro Blaster: X-9</h3>
+                    <p class="text-gray-300 text-sm mb-4">Defend the galaxy from pixelated invaders in this classic arcade shooter!</p>
+                    <button class="w-full py-3 px-4 bg-gradient-to-r from-pink-600 to-red-600 text-white font-semibold rounded-lg shadow-md hover:from-pink-700 hover:to-red-700 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-opacity-75 transform hover:-translate-y-1 transition-all duration-200">
+                        View Trailer
+                    </button>
+                </div>
+                <!-- Game Card 3 -->
+                <div class="bg-gray-900 bg-opacity-80 p-6 rounded-lg neon-glow transition-transform transform hover:scale-105 duration-300">
+                    <img src="https://placehold.co/400x250/33FF33/FFFFFF?text=DUNGEON+QUEST" alt="Dungeon Quest Placeholder" class="w-full h-40 object-cover mb-4 rounded-md border-2 border-green-500">
+                    <h3 class="text-2xl font-bold text-green-400 mb-2">Pixel Dungeon Quest</h3>
+                    <p class="text-gray-300 text-sm mb-4">Uncover secrets and battle monsters in a retro 8-bit adventure!</p>
+                    <button class="w-full py-3 px-4 bg-gradient-to-r from-green-600 to-lime-600 text-white font-semibold rounded-lg shadow-md hover:from-green-700 hover:to-lime-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-75 transform hover:-translate-y-1 transition-all duration-200">
+                        Pre-order Now
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Game Section -->
+        <section class="bg-gray-800 bg-opacity-70 p-6 md:p-8 rounded-xl shadow-lg neon-border flex flex-col md:flex-row items-center justify-center gap-8">
+            <div class="w-full md:w-1/2 text-center md:text-left">
+                <h2 class="text-3xl md:text-4xl font-bold text-cyan-300 mb-4 title-font">
+                    Featured Game: Grid Runner
+                </h2>
+                <p class="text-gray-300 text-lg mb-4">
+                    Outrun your rivals and conquer the digital grid in this intense, arcade-style racing game. Featuring pulse-pounding synthwave tracks and dynamic neon environments.
+                </p>
+                <button class="py-3 px-6 bg-gradient-to-r from-cyan-600 to-blue-600 text-white font-semibold rounded-lg shadow-md hover:from-cyan-700 hover:to-blue-700 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-opacity-75 transform hover:-translate-y-1 transition-all duration-200 neon-glow">
+                    Play Now!
+                </button>
+            </div>
+            <div class="w-full md:w-1/2 flex justify-center">
+                <img src="https://placehold.co/600x400/00FFFF/000000?text=GRID+RUNNER" alt="Grid Runner Gameplay" class="w-full max-w-md h-auto rounded-lg border-4 border-cyan-500 neon-glow">
+            </div>
+        </section>
+
+        <!-- About Us / Contact Section -->
+        <section class="bg-gray-800 bg-opacity-70 p-6 md:p-8 rounded-xl shadow-lg neon-border text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-orange-300 mb-6 title-font">
+                About Zorn's Game Factory
+            </h2>
+            <p class="text-gray-300 text-lg leading-relaxed mb-6 max-w-3xl mx-auto">
+                We're dedicated to bringing back the golden age of arcade gaming with a modern twist. Our factory crafts meticulously designed pixel art worlds, immersive synthwave soundscapes, and challenging gameplay that will transport you straight back to the 80s. Get ready for a blast from the past!
+            </p>
+            <div class="flex flex-col md:flex-row justify-center gap-4">
+                <a href="#" class="py-3 px-6 bg-gradient-to-r from-orange-600 to-red-600 text-white font-semibold rounded-lg shadow-md hover:from-orange-700 hover:to-red-700 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-opacity-75 transform hover:-translate-y-1 transition-all duration-200 neon-glow">
+                    Contact Us
+                </a>
+                <a href="#" class="py-3 px-6 bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-semibold rounded-lg shadow-md hover:from-indigo-700 hover:to-purple-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-75 transform hover:-translate-y-1 transition-all duration-200 neon-glow">
+                    Follow Us on Social
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="w-full max-w-6xl mt-12 text-center text-gray-400 text-sm">
+        <p>&copy; 2025 Zorn's Game Factory. All rights reserved. | <span class="text-blue-500">Retro vibes enabled.</span></p>
+    </footer>
+
+</body>
+</html>
